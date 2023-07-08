@@ -5,7 +5,7 @@ dotenv.config()
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Masashi Ishikawa's portfolio",
+    title: 'Cartoon Street',
     author: 'Masashi Ishikawa',
     // description: "SIer's tech blog powered by Gatsby",
     description: "Masashi's original portfolio site powered by Gastby.",
