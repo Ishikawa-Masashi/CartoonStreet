@@ -26,6 +26,7 @@ import HeaderAction from './HeaderAction'
 import { NavigationBar } from './NavigationBar'
 
 import 自画像 from '../images/自画像.png'
+import タイトルロゴ from '../images/タイトルロゴ.png'
 
 type Props = {
   location: WindowLocation
@@ -65,7 +66,7 @@ const Layout = ({ location, children }: Props) => {
           {/* <DarkToggle /> */}
           <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
           <div className="h-20"></div>
-          <img className="w-3/12" src={`${自画像}`} alt="test" />
+          <img className="w-8/12" src={`${タイトルロゴ}`} alt="test" />
           <div className="text-4xl">Never Knows Best</div>
           <div css={styles.header_container__inner}>
             {/* <h1 css={styles.blog_title_area}> */}
