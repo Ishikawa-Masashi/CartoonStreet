@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[408],{2684:function(e,l,o){o.r(l);var t=o(7294),u=o(1883),n=o(917);l.default=()=>(0,n.jsx)(t.Fragment,null,(0,n.jsx)("h1",null,"About"),(0,n.jsx)("p",null,"Welcome to About Page"),(0,n.jsx)(u.Link,{to:"/"},"Go back to the homepage"))}}]);
