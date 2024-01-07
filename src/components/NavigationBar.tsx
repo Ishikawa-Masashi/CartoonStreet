@@ -12,15 +12,15 @@ export const NavigationBar = () => {
           to={'/'}
           style={{ textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black' }}
         >
-          Ishikawa Masashi
+          Cartoon Street
         </Link>
 
         <Link
           className="px-2 font-mono text-xl font-black text-white hover:shadow-none"
-          to={'/category/game'}
+          to={'/the-simpsons'}
           style={{ textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black' }}
         >
-          Game
+          ザ・シンプソンズ
         </Link>
       </div>
       <DarkToggle />

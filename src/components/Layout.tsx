@@ -27,6 +27,7 @@ import { NavigationBar } from './NavigationBar'
 
 import 自画像 from '../images/自画像.png'
 import タイトルロゴ from '../images/タイトルロゴ.png'
+import SimpsonsLogo from '../../assets/simpsons.svg'
 
 type Props = {
   location: WindowLocation
@@ -38,17 +39,21 @@ const Layout = ({ location, children }: Props) => {
   const rootPath = `${prefix}/`
   const tagPath = `${prefix}/tags/`
   const categoryPath = `${prefix}/category/`
+  const simpsonsPath = `${prefix}/the-simpsons/`
 
-  const { isRoot, isTag, isCategory } = useMemo(() => {
+  const { isRoot, isTag, isCategory, isSimpsons } = useMemo(() => {
     const isRoot = location.pathname === rootPath
     const isTag = location.pathname.startsWith(tagPath)
     const isCategory = location.pathname.startsWith(categoryPath)
+    const isSimpsons = location.pathname.startsWith(simpsonsPath)
+
     return {
       isRoot,
       isTag,
       isCategory,
+      isSimpsons,
     }
-  }, [location.pathname, rootPath, tagPath, categoryPath])
+  }, [location.pathname, rootPath, tagPath, categoryPath, simpsonsPath])
 
   const rootThumbnailPath = useRootThumbnailPath()
 
@@ -123,8 +128,36 @@ const Layout = ({ location, children }: Props) => {
       )
     }
 
+    if (isSimpsons) {
+      return (
+        <BackgroundImage
+          Tag="div"
+          className="flex h-80 items-center justify-center bg-cover dark:brightness-100 dark:grayscale-0 dark:hue-rotate-180 dark:saturate-100"
+          {...convertedHeaderImage}
+          backgroundColor={`#8A5E5F`}
+        >
+          {/* <DarkToggle /> */}
+
+          <div className="h-60 ">
+            <SimpsonsLogo width={'100%'} height={'100%'} />
+          </div>
+          <Seo isRoot={true} thumbnailSrc={rootThumbnailPath} />
+          {/* <div css={styles.header_container__inner}> */}
+          <div className="">
+            {/* <h1 css={styles.blog_title_area}> */}
+            <h1 className="text-4xl">
+              {/* <Link css={styles.blog_title} to={'/'}> */}
+              <Link className="" to={'/'}>
+                {_capitalize(location.pathname.split('/')[2])}
+              </Link>
+            </h1>
+          </div>
+        </BackgroundImage>
+      )
+    }
+
     return ''
-  }, [isRoot, isTag, isCategory, rootThumbnailPath, convertedHeaderImage, location])
+  }, [isRoot, isTag, isCategory, rootThumbnailPath, convertedHeaderImage, isSimpsons, location])
 
   return (
     <div css={styles.root_container}>
